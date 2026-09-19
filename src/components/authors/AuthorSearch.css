@@ -1,0 +1,44 @@
+.author-search {
+    max-width: 800px;
+    margin: 0 auto 1.5rem;
+}
+
+.author-search h2 {
+    margin-bottom: 0.75rem;
+    text-align: center;
+}
+
+.author-search form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.author-search label {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-weight: 500;
+}
+
+.author-search input {
+    width: 120px;
+    padding: 0.3rem 0.4rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    box-sizing: border-box;
+}
+
+.author-search input[name="birthYear"] {
+    width: 80px;
+}
+
+.author-search button {
+    padding: 0.3rem 0.75rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
