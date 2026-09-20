@@ -9,6 +9,7 @@ export default function Authors() {
     const [authors, setAuthors] = useState<Author[]>([]);
     const [selectedAuthors, setSelectedAuthors] = useState<Set<number>>(new Set());
     const [editingAuthor, setEditingAuthor] = useState<Author | null>(null);
+    const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
         getAuthors()
@@ -32,6 +33,8 @@ export default function Authors() {
 
     async function handleDelete() {
         try {
+            setError(null);
+
             for (const id of selectedAuthors) {
                 await deleteAuthor(id);
             }
@@ -42,7 +45,7 @@ export default function Authors() {
 
             setSelectedAuthors(new Set());
         } catch (error) {
-            console.error(error);
+            setError(error instanceof Error ? error.message : "Failed to delete author");
         }
     }
 
@@ -141,6 +144,13 @@ export default function Authors() {
                                 ? ` (${selectedCount})`
                                 : ""}
                         </button>
+
+                        {error && (
+                            <div className="delete-error">
+                                {error}
+                            </div>
+                        )}
+
                     </div>
                 )}
             </div>

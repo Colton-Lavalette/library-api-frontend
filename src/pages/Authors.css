@@ -25,3 +25,8 @@
     align-items: center;
     gap: 0.5rem;
 }
+
+.delete-error {
+    color: #c62828;
+    margin-top: 8px;
+}
