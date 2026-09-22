@@ -7,7 +7,9 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "site:up": "docker build -t library-api-frontend . && docker run -d -p 5173:5173 --name library-api-frontend -v \"$(pwd):/app\" -v library-api-frontend-node-modules:/app/node_modules library-api-frontend",
+    "site:down": "docker stop library-api-frontend && docker rm library-api-frontend"
   },
   "dependencies": {
     "react": "^19.2.7",
