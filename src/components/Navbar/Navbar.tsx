@@ -19,6 +19,9 @@ const Navbar = () => {
             <li>
                 <a href="/authors">Authors</a>
             </li>
+            <li>
+                <a href="/genres">Genres</a>
+            </li>
         </ul>
     </div>
     <div className="navbar-right">
