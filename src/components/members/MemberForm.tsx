@@ -97,19 +97,19 @@ function MemberForm({ member, onMemberSaved }: MemberFormProps) {
         <form onSubmit={handleSubmit} className="member-form">
             <h2>{member ? "Edit Member" : "Add Member"}</h2>
             <label>
-                First:
+                First Name:
                 <input required type="text" name="first" value={formData.first} onChange={handleChange} />
             </label>
             <label>
-                Middle:
+                Middle Name:
                 <input type="text" name="middle" value={formData.middle} onChange={handleChange} />
             </label>
             <label>
-                Last:
+                Last Name:
                 <input required type="text" name="last" value={formData.last} onChange={handleChange} />
             </label>
             <label>
-                Email:
+                Email Address:
                 <input required type="text" name="email" value={formData.email} onChange={handleChange} />
             </label>
             <button type="submit">
