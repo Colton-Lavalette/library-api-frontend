@@ -12,7 +12,7 @@ function BookForm({ book, onBookSaved }: BookFormProps) {
     const [formData, setFormData] = useState({
         title: '',
         isbn: '',
-        publishedYear: '',
+        publishedYear: ''
     });
 
     useEffect(() => {
@@ -20,7 +20,7 @@ function BookForm({ book, onBookSaved }: BookFormProps) {
             setFormData({
                 title: book.title,
                 isbn: book.isbn,
-                publishedYear: book.publishedYear.toString(),
+                publishedYear: book.publishedYear.toString()
             });
         }
     }, [book]);
@@ -46,7 +46,7 @@ function BookForm({ book, onBookSaved }: BookFormProps) {
                     {
                         method: 'PATCH',
                         headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(formData),
+                        body: JSON.stringify(formData)
                     }
                 );
 
