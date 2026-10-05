@@ -3,7 +3,7 @@ import Authors from "./pages/Authors";
 import Books from "./pages/Books";
 import Genres from "./pages/Genres";
 import Members from "./pages/Members";
-import Navbar from "./components/Navbar/Navbar";
+import Navbar from "./layout/Navbar/Navbar";
 
 function App() {
     return (
