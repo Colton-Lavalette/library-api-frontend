@@ -1,0 +1,29 @@
+.theme-toggle select {
+    background: transparent;
+    color: var(--color-nav-text);
+    border: 0.0625rem solid color-mix(in srgb, var(--color-nav-text) 45%, transparent);
+    border-radius: var(--radius);
+    padding: 0.3125rem 0.5rem;
+    font-size: 0.875rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: border-color 0.3s;
+    min-width: 6.5rem;
+    text-align: center;
+}
+
+.theme-toggle select:hover {
+    border-color: var(--color-nav-text);
+}
+
+/* The default focus colour is dark gold, which is hard to see on forest green. */
+.theme-toggle select:focus-visible {
+    outline: 0.125rem solid var(--color-nav-text);
+    outline-offset: 0.125rem;
+}
+
+/* The open list is drawn by the browser, so give it normal page colours. */
+.theme-toggle option {
+    background: var(--color-surface);
+    color: var(--color-text);
+}
