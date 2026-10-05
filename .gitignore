@@ -24,5 +24,4 @@ dist-ssr
 *.sw?
 
 # Temp local development files
-library-sprint1-plan.md
-library-ui.html
+local-dev/*
