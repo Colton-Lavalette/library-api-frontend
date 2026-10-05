@@ -97,21 +97,46 @@ function BookForm({ book, onBookSaved }: BookFormProps) {
 
     return (
         <form onSubmit={handleSubmit} className="book-form">
-            <h2>{book ? "Edit Book" : "Add Book"}</h2>
+            <h2>{book ? 'Edit Book' : 'Add Book'}</h2>
+
             <label>
-                Book Title:
-                <input required type="text" name="title" value={formData.title} onChange={handleChange} />
+                Title:
+                <input
+                    className="form-control"
+                    required
+                    type="text"
+                    name="title"
+                    value={formData.title}
+                    onChange={handleChange}
+                />
             </label>
+
             <label>
                 ISBN:
-                <input required type="text" name="isbn" value={formData.isbn} onChange={handleChange} />
+                <input
+                    className="form-control"
+                    required
+                    type="text"
+                    name="isbn"
+                    value={formData.isbn}
+                    onChange={handleChange}
+                />
             </label>
+
             <label>
                 Published Year:
-                <input required type="number" name="publishedYear" value={formData.publishedYear} onChange={handleChange} />
+                <input
+                    className="form-control"
+                    required
+                    type="number"
+                    name="publishedYear"
+                    value={formData.publishedYear}
+                    onChange={handleChange}
+                />
             </label>
-            <button type="submit">
-                {book ? "Update" : "Submit"}
+
+            <button className="btn" type="submit">
+                {book ? 'Update' : 'Submit'}
             </button>
         </form>
     );

@@ -51,7 +51,7 @@ export default function Members() {
     const selectedCount = selectedMembers.size;
 
     return (
-        <main>
+        <main className="page">
             <h1>Members</h1>
 
             <div className="members-layout">

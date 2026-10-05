@@ -52,7 +52,7 @@ export default function Authors() {
     const selectedCount = selectedAuthors.size;
 
     return (
-        <main>
+        <main className="page">
             <h1>Authors</h1>
 
             <AuthorSearch

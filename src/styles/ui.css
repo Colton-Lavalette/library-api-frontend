@@ -1,0 +1,45 @@
+.btn {
+    border: 0.125rem solid transparent;
+    background: var(--color-accent-soft);
+    color: var(--color-accent-text);
+    padding: 0.3125rem 0.875rem;
+    border-radius: var(--radius);
+    font-weight: 500;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+.btn:hover:not(:disabled) { border-color: color-mix(in srgb, var(--color-accent) 50%, transparent); }
+.btn--primary { background: var(--color-accent); color: var(--color-accent-contrast); }
+.btn--sm { padding: 0.125rem 0.625rem; font-size: 0.8125rem; }
+.btn:disabled { opacity: 0.45; cursor: not-allowed; }
+
+.chip { display: inline-block; padding: 0.0625rem 0.5rem; border-radius: 999px; font-size: 0.75rem; font-weight: 500; white-space: nowrap; background: var(--color-surface-subtle); color: var(--color-text-muted); }
+.chip--ok   { background: var(--color-ok-bg);   color: var(--color-ok); }
+.chip--warn { background: var(--color-warn-bg); color: var(--color-warn); }
+.chip--bad  { background: var(--color-bad-bg);  color: var(--color-bad); }
+.chip--accent { background: var(--color-accent-soft); color: var(--color-accent-text); }
+
+.panel { border: 0.0625rem solid var(--color-border); border-radius: var(--radius); background: var(--color-surface); min-width: 0; }
+
+.table-wrap { overflow-x: auto; }
+.table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.table th { text-align: left; padding: 0.5rem 0.875rem; font-family: var(--font-mono); font-size: 0.6875rem; letter-spacing: 0.06em; text-transform: uppercase; font-weight: 500; color: var(--color-text-muted); border-bottom: 0.0625rem solid var(--color-border); }
+.table td { padding: 0.5625rem 0.875rem; border-bottom: 0.0625rem solid var(--color-border); }
+.table tr:last-child td { border-bottom: 0; }
+
+.form-control {
+    width: 100%;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius);
+    background: var(--color-surface);
+    color: var(--color-text);
+    padding: 0.5rem 0.625rem;
+}
+
+.form-control::placeholder {
+    color: var(--color-text-muted);
+}
+
+.form-control:focus {
+    border-color: var(--color-accent);
+}

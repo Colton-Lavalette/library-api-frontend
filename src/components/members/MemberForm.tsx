@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Member } from '../../types/Member';
 import './MemberForm.css';
 
-
 interface MemberFormProps {
     member?: Member;
     onMemberSaved: (member: Member) => void;
@@ -13,14 +12,14 @@ function MemberForm({ member, onMemberSaved }: MemberFormProps) {
         first: '',
         middle: '',
         last: '',
-        email: ''
+        email: '',
     });
 
     useEffect(() => {
         if (member) {
             setFormData({
                 first: member.first,
-                middle: member.middle,
+                middle: member.middle ?? '',
                 last: member.last,
                 email: member.email
             });
@@ -29,7 +28,6 @@ function MemberForm({ member, onMemberSaved }: MemberFormProps) {
 
     function handleChange(event: React.ChangeEvent<HTMLInputElement>) {
         const { name, value } = event.target;
-
         setFormData(prev => ({ ...prev, [name]: value }));
     }
 
@@ -86,7 +84,7 @@ function MemberForm({ member, onMemberSaved }: MemberFormProps) {
                 first: '',
                 middle: '',
                 last: '',
-                email: ''
+                email: '',
             });
         } catch (error) {
             console.error('Network error:', error);
@@ -95,29 +93,60 @@ function MemberForm({ member, onMemberSaved }: MemberFormProps) {
 
     return (
         <form onSubmit={handleSubmit} className="member-form">
-            <h2>{member ? "Edit Member" : "Add Member"}</h2>
+            <h2>{member ? 'Edit Member' : 'Add Member'}</h2>
+
             <label>
                 First Name:
-                <input required type="text" name="first" value={formData.first} onChange={handleChange} />
+                <input
+                    className="form-control"
+                    required
+                    type="text"
+                    name="first"
+                    value={formData.first}
+                    onChange={handleChange}
+                />
             </label>
+
             <label>
                 Middle Name:
-                <input type="text" name="middle" value={formData.middle} onChange={handleChange} />
+                <input
+                    className="form-control"
+                    type="text"
+                    name="middle"
+                    value={formData.middle}
+                    onChange={handleChange}
+                />
             </label>
+
             <label>
                 Last Name:
-                <input required type="text" name="last" value={formData.last} onChange={handleChange} />
+                <input
+                    className="form-control"
+                    required
+                    type="text"
+                    name="last"
+                    value={formData.last}
+                    onChange={handleChange}
+                />
             </label>
+
             <label>
-                Email Address:
-                <input required type="text" name="email" value={formData.email} onChange={handleChange} />
+                Birth Year:
+                <input
+                    className="form-control"
+                    required
+                    type="text"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                />
             </label>
-            <button type="submit">
-                {member ? "Update" : "Submit"}
+
+            <button className="btn" type="submit">
+                {member ? 'Update' : 'Submit'}
             </button>
         </form>
     );
-
 }
 
 export default MemberForm;

@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { Genre } from '../../types/Genre';
 import './GenreForm.css';
 
-
 interface GenreFormProps {
     genre?: Genre;
     onGenreSaved: (genre: Genre) => void;
@@ -76,7 +75,7 @@ function GenreForm({ genre, onGenreSaved }: GenreFormProps) {
             }
 
             setFormData({
-                name: ''
+                name: '',
             });
         } catch (error) {
             console.error('Network error:', error);
@@ -85,17 +84,24 @@ function GenreForm({ genre, onGenreSaved }: GenreFormProps) {
 
     return (
         <form onSubmit={handleSubmit} className="genre-form">
-            <h2>{genre ? "Edit Genre" : "Add Genre"}</h2>
+            <h2>{genre ? 'Edit Genre' : 'Add Genre'}</h2>
+
             <label>
                 Genre Name:
-                <input required type="text" name="name" value={formData.name} onChange={handleChange} />
+                <input
+                    className="form-control"
+                    required
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                />
             </label>
-            <button type="submit">
-                {genre ? "Update" : "Submit"}
+            <button className="btn" type="submit">
+                {genre ? 'Update' : 'Submit'}
             </button>
         </form>
     );
-
 }
 
 export default GenreForm;

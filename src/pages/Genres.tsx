@@ -51,7 +51,7 @@ export default function Genres() {
     const selectedCount = selectedGenres.size;
 
     return (
-        <main>
+        <main className="page">
             <h1>Genres</h1>
 
             <div className="genres-layout">

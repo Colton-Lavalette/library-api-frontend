@@ -48,7 +48,7 @@ export default function Books() {
     const selectedCount = selectedBooks.size;
 
     return (
-        <main>
+        <main className="page">
             <h1>Books</h1>
 
             <div className="books-layout">
