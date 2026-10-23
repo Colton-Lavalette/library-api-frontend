@@ -1,0 +1,24 @@
+.ticker {
+    overflow: hidden;
+    background: rgb(0 0 0 / 16%);
+    border-top: 1px solid rgb(245 236 200 / 16%);
+    color: var(--color-nav-text);
+}
+.ticker__track {
+    display: inline-flex;
+    gap: 40px;
+    padding: 11px 0;
+    white-space: nowrap;
+    font-family: var(--font-mono);
+    font-size: 12px;
+    text-transform: uppercase;
+    animation: ticker-scroll 40s linear infinite;
+}
+.ticker__track span::before {
+    content: "●";
+    margin-right: 12px;
+    color: var(--gold);
+}
+@keyframes ticker-scroll {
+    to { transform: translateX(-50%); }
+}

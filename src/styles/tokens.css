@@ -1,90 +1,89 @@
+/* Design tokens — v10 direction.
+   Light (cream paper) is the default. Night (forest) is set with data-theme="night". */
+
 :root {
-    /* color */
-    --color-bg: #ffffff;
-    --color-surface: #ffffff;
-    --color-surface-subtle: #f4f3ec;
-    --color-text: #08060d;
-    --color-text-muted: #6b6375;
-    --color-border: #e5e4e7;
-    --color-accent: #8a6d1f;
-    --color-accent-contrast: #ffffff;
-    --color-accent-soft: rgba(138, 109, 31, 0.12);
-    --color-accent-text: #7a5f19;
-    --color-nav-bg: #113a18;
-    --color-nav-text: #f5ecc8;
-    --color-nav-text-hover: #fffbea;
-    --color-nav-cta-bg: #f5ecc8;
-    --color-nav-cta-text: #113a18;
+    /* palette: forest, gold, cream */
+    --forest-900: #071a0a;
+    --forest-800: #0c2a11;
+    --forest-700: #113a18;
+    --forest-500: #2f5e37;
+    --gold: #d4b04a;
+    --gold-deep: #8a6d1f;
+    --cream: #f5ecc8;
+    --cream-hi: #fffbea;
+    --paper: #f4f0e0;
+
+    /* semantic colour */
+    --color-bg: radial-gradient(900px 620px at 92% -8%, rgb(138 109 31 / 16%), transparent 60%),
+    radial-gradient(760px 540px at -8% 108%, rgb(47 94 55 / 22%), transparent 60%),
+    var(--paper);
+    --color-glass: rgb(255 253 240 / 62%);
+    --color-glass-hi: rgb(255 253 240 / 88%);
+    --color-tint-1: rgb(17 58 24 / 6%);
+    --color-tint-2: rgb(17 58 24 / 11%);
+    --color-tint-3: rgb(138 109 31 / 16%);
+    --color-line: rgb(17 58 24 / 14%);
+    --color-text: var(--forest-700);
+    --color-text-2: rgb(17 58 24 / 72%);
+    --color-text-3: rgb(17 58 24 / 48%);
+    --color-accent: var(--gold-deep);
+    --color-accent-soft: rgb(138 109 31 / 14%);
+    --color-on-accent: var(--cream-hi);
+    --color-nav-bg: var(--forest-700);
+    --color-nav-text: var(--cream);
+    --color-nav-on-bg: var(--cream);
+    --color-nav-on-text: var(--forest-700);
     --color-ok: #1f6b2e;
-    --color-ok-bg: #e3f0e4;
-    --color-warn: #9a4a0a;
-    --color-warn-bg: #fbe6d3;
-    --color-bad: #a3332a;
-    --color-bad-bg: #fbe4e0;
+    --color-bad: #8a2b22;
+    --shadow-soft: 0 1px 2px rgb(17 58 24 / 8%), 0 16px 36px -22px rgb(17 58 24 / 40%);
 
     /* type */
-    --font-sans: 'IBM Plex Sans', system-ui, sans-serif;
-    --font-display: 'Source Serif 4', Georgia, serif;
-    --font-mono: 'IBM Plex Mono', ui-monospace, Consolas, monospace;
+    --font-display: 'Archivo', 'Helvetica Neue', Arial, sans-serif;
+    --font-mono: 'Space Mono', ui-monospace, monospace;
 
-    /* spacing and shape */
+    /* shape */
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+    --radius-xl: 28px;
+    --radius-pill: 999px;
+
+    /* spacing */
     --space-1: 0.25rem;
     --space-2: 0.5rem;
     --space-3: 0.75rem;
     --space-4: 1rem;
     --space-5: 1.25rem;
     --space-6: 1.5rem;
-    --radius: 0.25rem;
-
-    /* effects */
-    --shadow-logo: 2px 2px 4px rgb(0 0 0 / 50%);
+    --space-8: 2rem;
+    --space-10: 2.5rem;
+    --pad-page: clamp(18px, 3vw, 40px);
 
     color-scheme: light;
 }
 
-/* Dark values are listed twice on purpose (see section 6.7). */
-@media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
-        --color-bg: #121318;
-        --color-surface: #1a1b22;
-        --color-surface-subtle: #1f2028;
-        --color-text: #f3f4f6;
-        --color-text-muted: #9ca3af;
-        --color-border: #2e303a;
-        --color-accent: #d4b04a;
-        --color-accent-contrast: #16171d;
-        --color-accent-soft: rgba(212, 176, 74, 0.14);
-        --color-accent-text: #d4b04a;
-        --color-nav-bg: #0c2a11;
-        --color-nav-cta-text: #0c2a11;
-        --color-ok: #6fc28f;
-        --color-ok-bg: #163326;
-        --color-warn: #f0a15a;
-        --color-warn-bg: #3a2a14;
-        --color-bad: #ef9a90;
-        --color-bad-bg: #3d1e1b;
-        color-scheme: dark;
-    }
-}
-
-:root[data-theme="dark"] {
-    --color-bg: #121318;
-    --color-surface: #1a1b22;
-    --color-surface-subtle: #1f2028;
-    --color-text: #f3f4f6;
-    --color-text-muted: #9ca3af;
-    --color-border: #2e303a;
-    --color-accent: #d4b04a;
-    --color-accent-contrast: #16171d;
-    --color-accent-soft: rgba(212, 176, 74, 0.14);
-    --color-accent-text: #d4b04a;
-    --color-nav-bg: #0c2a11;
-    --color-nav-cta-text: #0c2a11;
-    --color-ok: #6fc28f;
-    --color-ok-bg: #163326;
-    --color-warn: #f0a15a;
-    --color-warn-bg: #3a2a14;
+:root[data-theme="night"] {
+    --color-bg: radial-gradient(900px 620px at 92% -8%, rgb(212 176 74 / 12%), transparent 60%),
+    radial-gradient(760px 540px at -8% 108%, rgb(47 94 55 / 40%), transparent 60%),
+    var(--forest-900);
+    --color-glass: rgb(245 236 200 / 5%);
+    --color-glass-hi: rgb(245 236 200 / 9%);
+    --color-tint-1: rgb(245 236 200 / 6%);
+    --color-tint-2: rgb(245 236 200 / 12%);
+    --color-tint-3: rgb(212 176 74 / 22%);
+    --color-line: rgb(245 236 200 / 14%);
+    --color-text: var(--cream);
+    --color-text-2: rgb(245 236 200 / 68%);
+    --color-text-3: rgb(245 236 200 / 42%);
+    --color-accent: var(--gold);
+    --color-accent-soft: rgb(212 176 74 / 16%);
+    --color-on-accent: var(--forest-900);
+    --color-nav-bg: rgb(12 42 17 / 80%);
+    --color-nav-text: var(--cream);
+    --color-nav-on-bg: var(--cream);
+    --color-nav-on-text: var(--forest-900);
+    --color-ok: #8fd5a4;
     --color-bad: #ef9a90;
-    --color-bad-bg: #3d1e1b;
+    --shadow-soft: 0 1px 2px rgb(0 0 0 / 30%), 0 16px 40px -20px rgb(0 0 0 / 60%);
     color-scheme: dark;
 }
